@@ -7,7 +7,7 @@ import { useState } from "react";
 import NavButton from "@/components/navbutton";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, MenuIcon } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 
 const routes = [
   {
