@@ -36,6 +36,7 @@ export const AccountForm = ({
   onDelete,
   disabled,
 }: Props) => {
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: defaultValues,
@@ -44,6 +45,7 @@ export const AccountForm = ({
   const handleDelete = () => {
     onDelete?.();
   };
+  
   return (
     <Form {...form}>
       <form
