@@ -1,3 +1,5 @@
+// Global State for drawer : New Account
+
 import { create } from "zustand";
 
 type NewAccountState = {
