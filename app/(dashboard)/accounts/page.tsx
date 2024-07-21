@@ -10,7 +10,7 @@ import { columns } from "./columns";
 
 import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
 import { useNewAccount } from "@/features/accounts/hooks/use-new-account";
-import { useBulkDeleteAccount } from "@/features/accounts/api/use-bulk-delete";
+import { useBulkDeleteAccount } from "@/features/accounts/api/use-bulk-delete-accounts";
 
 const AccountsPage = () => {
   const newAccount = useNewAccount();
@@ -51,7 +51,7 @@ const AccountsPage = () => {
           <DataTable
             columns={columns}
             data={accounts}
-            filterKey="Email"
+            filterKey="name"
             onDelete={(row) => {
               const ids = row.map((r) => r.original.id)
               deleteAccounts.mutate({ids})
