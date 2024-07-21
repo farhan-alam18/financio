@@ -13,6 +13,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Financio",
   description: "Your Partner in Financial Growth",
+  icons:{
+    icon: '/favicon.svg'
+  }
 };
 
 export default function RootLayout({
