@@ -1,14 +1,14 @@
-// Global State for drawer : New Account
+// Global State for drawer : New Transaction
 
 import { create } from "zustand";
 
-type NewAccountState = {
+type NewTransactionState = {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
 };
 
-export const useNewAccount = create<NewAccountState>((set) => ({
+export const useNewTransaction = create<NewTransactionState>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
