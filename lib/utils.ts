@@ -12,3 +12,11 @@ export function convertAmountToMiliunits(amount: number) {
 export function convertAmountFromMiliunits(amount: number) {
   return amount / 1000;
 }
+
+export function formatCurrency(value: number) {
+  return Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    minimumFractionDigits: 2,
+  }).format(value)
+}
