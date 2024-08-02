@@ -96,7 +96,6 @@ export const EditTransactionSheet = () => {
 
   const defaultValues = transactionQuery.data
     ? {
-        id: transactionQuery.data.id,
         accountId: transactionQuery.data.accountId,
         categoryId: transactionQuery.data.categoryId,
         amount: transactionQuery.data.amount.toString(),
@@ -107,7 +106,6 @@ export const EditTransactionSheet = () => {
         notes: transactionQuery.data.notes,
       }
     : {
-      id: "",
         accountId: "",
         categoryId: "",
         amount: "",
