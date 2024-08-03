@@ -12,7 +12,7 @@ import {
 export const useConfirm = (
   title: string,
   message: string
-): [() => JSX.Element, () => Promise<unknown>] => {
+): [() => JSX.Element, () => Promise<string | unknown>] => {
   const [promise, setPromise] = useState<{
     resolve: (value: boolean) => void;
   } | null>(null);

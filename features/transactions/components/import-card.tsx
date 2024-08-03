@@ -8,7 +8,7 @@ import { format, parse } from "date-fns";
 const dateFormat = "yyyy-MM-dd HH:mm:ss";
 const outputFormat = "yyyy-MM-dd";
 
-const requiredOptions = ["Amount", "Date", "Payee"];
+const requiredOptions = ["amount", "date", "payee"];
 
 interface SelectedColumnsState {
   [key: string]: string | null;
@@ -75,6 +75,21 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
         })
         .filter((row) => row.length > 0),
     };
+    // const arrayOfData = mappedData.body.map((row) => {
+    //   return row.reduce((acc: any, cell, index) => {
+    //     const header = mappedData.headers[index];
+    //     if (header !== null) {
+    //       acc[header] = cell;
+    //     }
+    //     return acc;
+    //   }, {});
+    // });
+    // const formattedData = arrayOfData.map((item) => ({
+    //   ...item,
+    //   amount: convertAmountToMiliunits(parseFloat(item.amount)),
+    //   date: format(parse(item.date, dateFormat, new Date()),outputFormat)
+    // }));
+
     const arrayOfData = mappedData.body.map((row) => {
       return row.reduce((acc: any, cell, index) => {
         const header = mappedData.headers[index];
@@ -84,13 +99,28 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
         return acc;
       }, {});
     });
-    const formattedData = arrayOfData.map((item) => ({
-      ...item,
-      amount: convertAmountToMiliunits(parseFloat(item.amount)),
-      date: format(parse(item.date, dateFormat, new Date()), outputFormat),
-    }));
+    
+    const formattedData = arrayOfData.map((item) => {
+      const formattedItem = { ...item };
+    
+      if (item.amount !== undefined) {
+        formattedItem.amount = convertAmountToMiliunits(parseFloat(item.amount));
+      }
+    
+      if (item.date !== undefined) {
+        try {
+          formattedItem.date = format(parse(item.date, dateFormat, new Date()), outputFormat);
+        } catch (error) {
+          console.error(`Error parsing or formatting date: ${item.date}`, error);
+        }
+      }
+    
+      return formattedItem;
+    });
+    
 
     onSubmit(formattedData);
+    // console.log({formattedData})
   };
 
   return (
