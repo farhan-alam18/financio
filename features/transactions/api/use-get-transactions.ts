@@ -28,8 +28,8 @@ export const useGetTransactions = () => {
       const { data } = await response.json();
       return data.map((transaction) => ({
         ...transaction,
-        amount: convertAmountFromMiliunits(transaction.amount)
-      }))
+        amount: convertAmountFromMiliunits(transaction.amount),
+      }));
     },
   });
 

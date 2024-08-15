@@ -1,4 +1,5 @@
 import {
+  Legend,
   RadialBar,
   RadialBarChart,
   ResponsiveContainer,
@@ -16,17 +17,19 @@ type Props = {
 export const RadialVariant = ({ data }: Props) => {
   return (
     <ResponsiveContainer width="100%" height={350}>
+    
       <RadialBarChart
       cx="50%"
-      cy="30%"
-      barSize={10}
-      innerRadius={19}
-      outerRadius="40%"
+      cy="40%"
+      barSize={30}
+      innerRadius={40}
+      outerRadius="80%"
       data={data.map((item, index) => ({
         ...item,
         fill: COLORS[index % COLORS.length]
       }))}
       >
+        <Legend/>
         <RadialBar 
         label={{
           position: "insideStart",
