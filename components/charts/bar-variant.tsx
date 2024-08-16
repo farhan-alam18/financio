@@ -30,7 +30,7 @@ export const BarVariant = ({ data }: Props) => {
           dataKey="date"
           tickFormatter={(value) => format(value, "dd MMM")}
           style={{ fontSize: "12px" }}
-          tickMargin={16}
+          tickMargin={12}
         />
         <Tooltip content={<CustomTooltip />}/>
         <Bar dataKey="income" fill="#3d82f6" className="drop-shadow-sm" />

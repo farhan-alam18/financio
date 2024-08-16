@@ -26,7 +26,7 @@ export const PieVariant = ({ data }: Props) => {
           cy="50%"
           outerRadius={90}
           innerRadius={0}
-          paddingAngle={5}
+          paddingAngle={2}
           fill="#8884d8"
           dataKey="value"
           labelLine={false}

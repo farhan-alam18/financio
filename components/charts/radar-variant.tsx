@@ -20,7 +20,7 @@ export const RadarVariant = ({data} : Props) => {
         <ResponsiveContainer width="100%" height={350}>
             <RadarChart
             cx="50%"
-            cy="60%"
+            cy="47%"
             outerRadius="80%"
             data={data}
             >
