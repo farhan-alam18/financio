@@ -75,11 +75,11 @@ export const EditTransactionSheet = () => {
     accountQuery.isLoading;
 
   const onSubmit = (values: FormValues) => {
-    editMutation.mutate(values, {
-      onSuccess: () => {
-        onClose();
-      },
-    });
+    // editMutation.mutate(values, {
+    //   onSuccess: () => {
+    //     onClose();
+    //   },
+    // });
   };
 
   const onDelete = async () => {
@@ -132,7 +132,7 @@ export const EditTransactionSheet = () => {
           ) : (
             <TransactionForm
               id={id}
-              defaultValues={defaultValues}
+              // defaultValues={defaultValues}
               onSubmit={onSubmit}
               onDelete={onDelete}
               disabled={isPending}
