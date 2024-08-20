@@ -2,6 +2,8 @@
 
 Financio is a comprehensive finance manager web application designed to help you track and manage your 30-day transactions with ease. Featuring an interactive dashboard, customizable components, and robust backend support, Financio offers a seamless user experience for all your financial needs.
 
+
+
 ## Key Features
 
 - 📈 **Engaging Financial Dashboard**: Explore your financial data through engaging charts and graphs.
