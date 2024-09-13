@@ -15,11 +15,11 @@ import { useBulkDeleteTransactions } from "@/features/transactions/api/use-bulk-
 
 import { DataTable } from "@/features/transactions/components/data-table";
 import { useNewTransaction } from "@/features/transactions/hooks/use-new-transaction";
-import { UploadButton } from "@/features/transactions/components/upload-button";
+// import { UploadButton } from "@/features/transactions/components/upload-button";
 import { ImportCard } from "@/features/transactions/components/import-card";
 import { useSelectAccount } from "@/hooks/use-select-account";
 import { toast } from "sonner";
-import { useBulkCreateTransactions } from "@/features/transactions/api/use-bulk-create-transactions";
+// import { useBulkCreateTransactions } from "@/features/transactions/api/use-bulk-create-transactions";
 
 enum VARIANTS {
   LIST = "LIST",
@@ -48,7 +48,7 @@ const TransactionsPage = () => {
   };
 
   const newTransaction = useNewTransaction();
-  const createTransactions = useBulkCreateTransactions();
+  // const createTransactions = useBulkCreateTransactions();
   const transactionsQuery = useGetTransactions();
   const deleteTransactions = useBulkDeleteTransactions();
   const transactions = transactionsQuery.data || [];
@@ -72,12 +72,12 @@ const TransactionsPage = () => {
       accountId: accountID as string,
     }));
 
-    createTransactions.mutate(data),
-      {
-        onSuccess: () => {
-          onCancelImport();
-        },
-      };
+    // createTransactions.mutate(data),
+    //   {
+    //     onSuccess: () => {
+    //       onCancelImport();
+    //     },
+    //   };
   };
 
   if (transactionsQuery.isLoading) {
@@ -126,7 +126,7 @@ const TransactionsPage = () => {
               <Plus className="size-4 mr-2" />
               Add new
             </Button>
-            <UploadButton onUpload={onUpload} />
+            {/* <UploadButton onUpload={onUpload} /> */}
           </div>
         </CardHeader>
         <CardContent>
